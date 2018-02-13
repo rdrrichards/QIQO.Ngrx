@@ -1,0 +1,10 @@
+<div *ngIf="products$">
+  <div *ngFor="let product of (products$ | async).products">
+    PRODUCT: {{ product.productId }} | {{ product.productCode }} | {{ product.productName }}
+  </div>
+</div>
+
+  <pre>
+    {{ products$ | async | json }}
+  </pre>
+

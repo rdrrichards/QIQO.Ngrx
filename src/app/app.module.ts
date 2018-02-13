@@ -1,17 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { EffectsModule } from '@ngrx/effects';
+import { ProductsEffects } from './products/products.effects';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './products';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ProductService } from './products/product.service';
+import { ProductsListComponent } from './products/products-list.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: 'products', component: ProductsListComponent }
+    ]),
+    EffectsModule.forRoot([ProductsEffects]),
+    StoreModule.forRoot(reducers),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
