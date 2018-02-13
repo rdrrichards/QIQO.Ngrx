@@ -29,16 +29,3 @@ export type ProductActions = ProductLoadAction
   | ProductLoadSuccessAction
   | ProductDeleteAction
   | ProductDeleteSuccessAction;
-
-
-// import { Action } from '@ngrx/store';
-
-// export enum ProductsActionTypes {
-//   ProductsAction = '[Products] Action'
-// }
-
-// export class Products implements Action {
-//   readonly type = ProductsActionTypes.ProductsAction;
-// }
-
-// export type ProductsActions = Products;
