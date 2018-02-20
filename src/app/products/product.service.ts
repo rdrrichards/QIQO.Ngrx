@@ -2,15 +2,17 @@ import { Observable } from 'rxjs/Observable';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/observable/of';
 import { Product } from './product';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class ProductService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
-    console.log('getProducts');
-    return Observable.of(PRODUCTS);
+    console.log('getProducts'); // 'http://localhost:34479/api/products'
+    return this.httpClient.get<Product[]>('http://localhost:34479/api/products');
+    // return Observable.of(PRODUCTS);
   }
 
 }

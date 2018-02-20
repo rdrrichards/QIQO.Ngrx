@@ -1,5 +1,12 @@
 export interface Product {
-  productId: number;
+  productKey: number;
   productCode: string;
+  productType: string;
   productName: string;
+  productDesc: string;
+  productShortDesc: string;
+  productLongDesc: string;
+  productImagePath: string;
+  productBasePrice: number;
+  productBaseQuantity: number;
 }
