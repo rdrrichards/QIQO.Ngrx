@@ -1,6 +1,5 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import 'rxjs/add/observable/of';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
 
