@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, Effect } from '@ngrx/effects';
+import { Actions, Effect, ofType } from '@ngrx/effects';
 import * as productActions from './products.actions';
 import { ProductService } from './product.service';
 import { switchMap, map } from 'rxjs/operators';
@@ -10,7 +10,8 @@ import { Product } from './product';
 export class ProductsEffects {
 
   @Effect()
-  loadProducts$ = this.actions$.ofType(productActions.ProductActionTypes.ProductLoadAction).pipe(
+  loadProducts$ = this.actions$.pipe(
+      ofType(productActions.ProductActionTypes.ProductLoadAction),
       switchMap(() => this.productService.getProducts()),
       map((products: Product[]) => (new productActions.ProductLoadSuccessAction(products)))
     );
