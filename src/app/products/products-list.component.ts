@@ -17,7 +17,7 @@ export class ProductsListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.productStore.dispatch(new productActions.ProductLoadAction());
+    this.productStore.dispatch(productActions.productLoadAction());
   }
 
 }

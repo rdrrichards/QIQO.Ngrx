@@ -1,4 +1,4 @@
-import { Action } from '@ngrx/store';
+import { Action, createAction } from '@ngrx/store';
 import { Product } from './product';
 
 export enum ProductActionTypes {
@@ -8,6 +8,9 @@ export enum ProductActionTypes {
   ProductDeleteSuccessAction = '[Product] Delete Success Action'
 }
 
+export const productLoadAction = createAction(
+  '[Product] Load Action'
+);
 export class ProductLoadAction implements Action {
   readonly type = ProductActionTypes.ProductLoadAction;
   constructor() {}
