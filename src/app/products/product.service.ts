@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
@@ -10,13 +10,13 @@ export class ProductService {
 
   getProducts(): Observable<Product[]> {
     console.log('getProducts'); // 'http://localhost:34479/api/products'
-    return this.httpClient.get<Product[]>('http://localhost:34479/api/products');
-    // return Observable.of(PRODUCTS);
+    // return this.httpClient.get<Product[]>('http://localhost:34479/api/products');
+    return of(PRODUCTS);
   }
 
 }
 
-export const PRODUCTS = [
-  { productId: 1, productCode: 'APPLE', productName: 'APPLE PIE CHEESECAKE 9"' },
-  { productId: 2, productCode: 'CRAP', productName: 'CARMEL APPLE CHEESECAKE 9"' }
+export const PRODUCTS: Product[] = [
+  { productKey: 1, productCode: 'APPLE', productName: 'APPLE PIE CHEESECAKE 9"' },
+  { productKey: 2, productCode: 'CRAP', productName: 'CARMEL APPLE CHEESECAKE 9"' }
 ];
