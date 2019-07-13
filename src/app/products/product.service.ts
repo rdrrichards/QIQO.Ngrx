@@ -3,6 +3,12 @@ import { Injectable } from '@angular/core';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
 
+export const PRODUCTS: Product[] = [
+  { productKey: 1, productCode: 'APPLE', productName: 'APPLE PIE CHEESECAKE 9"' },
+  { productKey: 2, productCode: 'CRAP', productName: 'CARMEL APPLE CHEESECAKE 9"' },
+  { productKey: 2, productCode: 'CHOC', productName: 'CARMEL CHOCOLATE CHEESECAKE 9"' }
+];
+
 @Injectable()
 export class ProductService {
 
@@ -15,8 +21,3 @@ export class ProductService {
   }
 
 }
-
-export const PRODUCTS: Product[] = [
-  { productKey: 1, productCode: 'APPLE', productName: 'APPLE PIE CHEESECAKE 9"' },
-  { productKey: 2, productCode: 'CRAP', productName: 'CARMEL APPLE CHEESECAKE 9"' }
-];
