@@ -27,7 +27,11 @@ import { ProductsListComponent } from './products/products-list.component';
     ]),
     EffectsModule.forRoot([ProductsEffects]),
     StoreModule.forRoot(reducers),
-    !environment.production ? StoreDevtoolsModule.instrument() : []
+    StoreDevtoolsModule.instrument({
+      name: 'QIQO Ngrx Playgroud',
+      maxAge: 40,
+      logOnly: environment.production
+    })
   ],
   providers: [ProductService],
   bootstrap: [AppComponent]
