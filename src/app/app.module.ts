@@ -23,8 +23,8 @@ import { ProductsListComponent } from './products/products-list.component';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'products', component: ProductsListComponent }
-    ]),
+    { path: 'products', component: ProductsListComponent }
+], { relativeLinkResolution: 'legacy' }),
     EffectsModule.forRoot([ProductsEffects]),
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({
