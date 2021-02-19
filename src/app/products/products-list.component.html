@@ -1,5 +1,5 @@
 <div *ngIf="products$">
-  <div *ngFor="let product of (products$ | async).products.results">
+  <div *ngFor="let product of (products$ | async)">
     PRODUCT: {{ product.productKey }} | {{ product.productCode }} | {{ product.productName }}
   </div>
 </div>
