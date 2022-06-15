@@ -124,7 +124,6 @@
       }
     }
   },
-  "defaultProject": "qiqo-ngrx",
   "schematics": {
     "@ngrx/schematics:component": {
       "prefix": "app",
