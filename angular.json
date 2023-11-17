@@ -58,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "qiqo-ngrx:build"
+            "buildTarget": "qiqo-ngrx:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "qiqo-ngrx:build:production"
+              "buildTarget": "qiqo-ngrx:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "qiqo-ngrx:build"
+            "buildTarget": "qiqo-ngrx:build"
           }
         },
         "test": {
